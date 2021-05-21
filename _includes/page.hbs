@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body class="p-3">
+  <div class="container text-center">
+    <h1 class="m-5">{{title}}</h1>
+
+    {{#if collections.posts}}
+    <div class="row">
+      {{#each collections.posts}}
+      <a class="col mb-3 text-decoration-none" href={{this.data.page.url}} data-index={{@key}}>
+        <article class="card" href={{this.data.url}} data-index={{@key}}>
+          {{#if this.data.banner}}
+            <img src="{{this.data.banner}}" class="card-img-top" alt="{{this.data.title}}">
+          {{/if}}
+          <div class="card-body text-left">
+            <h1 class="card-title font-weight-light">{{this.data.title}}</h1>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </article>
+      </a>
+      {{/each}}
+    </div>
+    {{/if}}
+    <hr />
+  </div>
+</body>

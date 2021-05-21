@@ -1,0 +1,12 @@
+{
+  "name": "time2hack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1"
+  },
+  "scripts" : {
+    "start" : "eleventy --serve"
+  }
+}
